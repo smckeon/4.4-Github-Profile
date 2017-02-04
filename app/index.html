@@ -3,14 +3,81 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
-    <title>4 4 github</title>
+    <title>4.4 Github Profile</title>
     <link rel="stylesheet" href="css/app.css">
   </head>
-  <body>
+  <div class="container-fluid">
+  <div class="col-md-12">
+    <div class="well">Pull requests</div>
+  </div>
 
-    <h1>Hello World!</h1>
+  <row>
 
-    
+      <div id="github-aside">
+
+      </div>
+
+      <div class="col-md-9">
+        <span>Overview</span>
+        <span>Repositories</span>
+        <span>Stars</span>
+        <span>Followers</span>
+        <span>Following</span>
+      </div>
+
+    <row>
+      <div class="col-md-9">
+        <div class="btn-group" data-toggle="buttons">
+        <label class="btn btn-primary active">
+        <input type="checkbox" checked autocomplete="off"> Checkbox 1 (pre-checked)
+        </label>
+        <button type="button" class="btn btn-primary btn-sm">Small button</button>
+        <button type="button" class="btn btn-primary btn-sm">Small button</button>
+      </div>
+    </row>
+
+  <row>
+    <div class="col-md-9">
+      <div class="github-repos">
+
+      </div>
+    </div>
+  </row>
+
+<script id="github-repos-template" type="text/x-handlebars-template">
+
+    <row>
+      <div class="col-md-9">
+        <h2>{{name}}</h2>
+        <span>-</span>
+        <span>HTML</span>
+        <span>Updated 3 days ago</span>
+      </div>
+    </row>
+
+</script>
+
+  </row>
+
+
+  <script id="github-aside-template" type="text/x-handlebars-template">
+
+      <div>
+        <div class="col-md-3">
+          <img src="{{avatar_url}}" alt="IMG PLACEHOLDER">
+          <p class="name">{{name}}</p>
+          <p class="username">{{login}}</p>
+          <p class="bio">{{bio}}</p>
+          <p class="location">{{location}}</p>
+          <p class="email">{{email}}</p>
+        </div>
+      </div>
+
+  </script>
+
+
+</div>
+
     <script src="js/bundle.js"></script>
   </body>
 </html>
