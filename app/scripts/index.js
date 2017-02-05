@@ -1,5 +1,5 @@
 var $ = require ('jquery');
-// var _ = require ('underscore');
+var _ = require ('underscore');
 var githubtoken = require ('./gitapikey.js');
 var Handlebars = require ('handlebars');
 
@@ -13,11 +13,13 @@ if (githubtoken !== undefined) {
    });
 }
 
+// Aside
 var asideSource = $('#github-aside-template').html();
 var asideTemplate = Handlebars.compile(asideSource);
 
 $.ajax('https://api.github.com/users/smckeon').done(function(data){
   var asideItem = {
+    avatar: data.avatar_url,
     name: data.name,
     login: data.login,
     bio: data.bio,
@@ -27,13 +29,12 @@ $.ajax('https://api.github.com/users/smckeon').done(function(data){
   $('#github-aside').append(asideTemplate(asideItem));
 });
 
-var repoSource = $('#github-repos-template').html();
-var repoTemplate = Handlebars.compile(repoSource);
+// Repos
 
 $.ajax('https://api.github.com/users/smckeon/repos').done(function(data){
-  var repoItem = {
-    name: data.name,
 
-  }
-  $('.github-repos').append(repoTemplate(repoItem));
+  var source = $('#github-repos-template').html();
+  var template = Handlebars.compile(source);
+
+  $('.github-repos').append(template(data));
 });

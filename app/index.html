@@ -6,9 +6,20 @@
     <title>4.4 Github Profile</title>
     <link rel="stylesheet" href="css/app.css">
   </head>
-  <div class="container-fluid">
+
+
+<div class="container-fluid">
   <div class="col-md-12">
-    <div class="well">Pull requests</div>
+
+    <div class="well">
+      <a class="octicon-mark" href="#"> <img src="../app/images/octicons-5.0.1/lib/svg/mark-github.svg" alt=""></a>
+    <form class="navbar-form navbar-left" role="search">
+    <div class="form-group">
+      <input type="text" class="form-control" placeholder="Search"></input>
+   </div>
+   </form>
+
+    </div>
   </div>
 
   <row>
@@ -17,24 +28,24 @@
 
       </div>
 
-      <div class="col-md-9">
+  </row>
+  <row>
+      <div class="col-md-9 lower-head-links">
         <span>Overview</span>
         <span>Repositories</span>
         <span>Stars</span>
         <span>Followers</span>
         <span>Following</span>
       </div>
+  </row>
 
-    <row>
-      <div class="col-md-9">
-        <div class="btn-group" data-toggle="buttons">
-        <label class="btn btn-primary active">
-        <input type="checkbox" checked autocomplete="off"> Checkbox 1 (pre-checked)
-        </label>
-        <button type="button" class="btn btn-primary btn-sm">Small button</button>
-        <button type="button" class="btn btn-primary btn-sm">Small button</button>
-      </div>
-    </row>
+<row>
+  <div class="col-md-9">
+    <form class="navbar-form navbar-left" role="search">
+    <input type="text" class="form-control" placeholder="Search repositories...">
+    </div>
+  </form>
+</row>
 
   <row>
     <div class="col-md-9">
@@ -48,34 +59,35 @@
 
     <row>
       <div class="col-md-9">
-        <h2>{{name}}</h2>
+        <h1>ENTER REPO TITLE HERE</h1>
         <span>-</span>
-        <span>HTML</span>
-        <span>Updated 3 days ago</span>
+        <!-- <span>HTML</span> -->
+        <!-- <span>Updated 3 days ago</span> -->
       </div>
     </row>
 
 </script>
 
-  </row>
+
 
 
   <script id="github-aside-template" type="text/x-handlebars-template">
 
       <div>
         <div class="col-md-3">
-          <img src="{{avatar_url}}" alt="IMG PLACEHOLDER">
+          <img src="{{avatar}}" alt="Sean" class="Sean">
           <p class="name">{{name}}</p>
           <p class="username">{{login}}</p>
           <p class="bio">{{bio}}</p>
           <p class="location">{{location}}</p>
-          <p class="email">{{email}}</p>
+          <a href="mailto:{{email}}" target="_top">{{email}}</a>
         </div>
       </div>
 
   </script>
 
 
+  </div>
 </div>
 
     <script src="js/bundle.js"></script>

@@ -15,3 +15,52 @@ $icon-font-path: '../../node_modules/bootstrap-sass/assets/fonts/bootstrap/';
 img {
   max-width: 100%;
 }
+
+// Begin SASS
+
+// Header
+
+
+
+// Aside
+.Sean{
+  border: 1px solid gray;
+  border-radius: 15px;
+  height: 230px;
+  width: 230px;
+}
+
+.name {
+  font-size: 18px;
+  margin-bottom: 0px;
+}
+
+.username{
+  font-size: 14px;
+  color: #666666;
+}
+
+.bio {
+  border-bottom: 1px solid gray;
+  padding-bottom: 5px;
+}
+
+
+// Lower header link bars
+
+
+.lower-head-links{
+  left: 55px;
+  padding-bottom: 5px;
+    span{
+    font-size: 14px;
+    margin-right: 80px;
+  }
+}
+
+// Repository Search
+
+.repository-search{
+  border-top: 1px solid gray;
+  border-bottom: 1px solid gray;
+}
