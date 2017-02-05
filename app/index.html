@@ -5,89 +5,115 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
     <title>4.4 Github Profile</title>
     <link rel="stylesheet" href="css/app.css">
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
   </head>
 
 
+
+  <div class="container">
+    <div class="row">
+        <div class="header">
+            <span><img src="images/mark-github-header.svg" alt="img-header"></span>
+            <span><input type="search" id="header-search" class="bar" placeholder="Search repositories..."></span>
+            <span>Pull Request</span>
+            <span>Issues</span>
+            <span>Gist</span>
+            <span><i class="fa fa-plus" aria-hidden="true"></i></span>
+            <span></span>
+          </div>
+        </div>
+    </div>
+
+
 <div class="container-fluid">
-  <div class="col-md-12">
-
-    <div class="well">
-      <a class="octicon-mark" href="#"> <img src="../app/images/octicons-5.0.1/lib/svg/mark-github.svg" alt=""></a>
-    <form class="navbar-form navbar-left" role="search">
-    <div class="form-group">
-      <input type="text" class="form-control" placeholder="Search"></input>
-   </div>
-   </form>
-
-    </div>
-  </div>
-
-  <row>
-
-      <div id="github-aside">
-
-      </div>
-
-  </row>
-  <row>
-      <div class="col-md-9 lower-head-links">
-        <span>Overview</span>
-        <span>Repositories</span>
-        <span>Stars</span>
-        <span>Followers</span>
-        <span>Following</span>
-      </div>
-  </row>
-
-<row>
-  <div class="col-md-9">
-    <form class="navbar-form navbar-left" role="search">
-    <input type="text" class="form-control" placeholder="Search repositories...">
-    </div>
-  </form>
-</row>
-
-  <row>
-    <div class="col-md-9">
-      <div class="github-repos">
-
-      </div>
-    </div>
-  </row>
-
-<script id="github-repos-template" type="text/x-handlebars-template">
-
     <row>
-      <div class="col-md-9">
-        <h1>ENTER REPO TITLE HERE</h1>
-        <span>-</span>
-        <!-- <span>HTML</span> -->
-        <!-- <span>Updated 3 days ago</span> -->
-      </div>
+
+        <div id="github-aside">
+          <!-- ASIDE CONTENT -->
+        </div>
+
+        <div class="col-md-8 lower-head-links">
+            <span>Overview</span>
+            <span>Repositories</span>
+            <span>Stars</span>
+            <span>Followers</span>
+            <span>Following</span>
+        </div>
+
+
+
+          <div class="col-md-8">
+            <form class="navbar-form navbar-left" role="search">
+              <input type="text" class="form-control" placeholder="Search repositories...">
+            </form>
+          </div>
+
+        <div class="col-md-8">
+            <div class="github-repos">
+              <!-- REPO CONTENT -->
+            </div>
+        </div>
+
     </row>
 
-</script>
 
 
+    <script id="github-repos-template" type="text/x-handlebars-template">
 
 
-  <script id="github-aside-template" type="text/x-handlebars-template">
-
-      <div>
-        <div class="col-md-3">
-          <img src="{{avatar}}" alt="Sean" class="Sean">
-          <p class="name">{{name}}</p>
-          <p class="username">{{login}}</p>
-          <p class="bio">{{bio}}</p>
-          <p class="location">{{location}}</p>
-          <a href="mailto:{{email}}" target="_top">{{email}}</a>
+        <div class="col-md-8">
+            <a class="repo-name">{{name}}</a>
+            <br>
+            <span class="repo-{{language}}-color"></span>
+            <span class="language">{{language}}</span>
+             <span>Updated {{formatDate}} </span>
         </div>
-      </div>
-
-  </script>
 
 
+    </script>
+
+
+    <script id="github-aside-template" type="text/x-handlebars-template">
+
+        <div>
+            <div class="col-md-3">
+                <img src="{{avatar}}" alt="Sean" class="Sean">
+                <p class="name">{{name}}</p>
+                <p class="username">{{login}}</p>
+                <p class="bio">{{bio}}</p>
+                <img src="images/location.svg" alt="">
+                <span class="location">{{location}}</span><br>
+                <span><img src="images/mail.svg" alt="">
+                <a href="mailto:{{email}}" target="_top">{{email}}</a></span>
+                <img src="images/clock.svg" alt="">
+                <span class="date-joined"></span>
+                <!-- <p>Organizations</p>
+                <p><img src="{{organizations_url}}" alt=""></p> -->
+            </div>
+        </div>
+
+    </script>
+
+  <div class="col-md-12 footer">
+    <footer>
+        <span>&copy; 2017 GitHub, Inc. </span>
+        <a class="">Terms</a>
+        <a class="">Privacy</a>
+        <a class="">Security</a>
+        <a class="">Status</a>
+        <a class="help">Help</a>
+
+        <span><img src="images/mark-github.svg" alt="footer-img"></span>
+
+        <a class="contact-gh">Contact GitHub</a>
+        <a class="">API</a>
+        <a class="">Training</a>
+        <a class="">Shop</a>
+        <a class="">Blog</a>
+        <a class="">About</a>
+    </footer>
   </div>
+
 </div>
 
     <script src="js/bundle.js"></script>

@@ -20,7 +20,20 @@ img {
 
 // Header
 
+.header{
+  margin: 5px 0 5px 0px;
+  padding: 20px;
+  border-bottom: 1px solid #E5E5E5;
+  background-color: #F5F5F5;
+}
 
+.img-header{
+  padding-right: 10px;
+}
+
+#header-search{
+  width: 200px;
+}
 
 // Aside
 .Sean{
@@ -54,13 +67,25 @@ img {
   padding-bottom: 5px;
     span{
     font-size: 14px;
-    margin-right: 80px;
+    margin-right: 60px;
   }
 }
 
 // Repository Search
 
-.repository-search{
+// .repository-search{
+//   border-top: 1px solid gray;
+//   border-bottom: 1px solid gray;
+// }
+
+.repo-name{
+  font-size: 20px;
+}
+
+
+// Footer
+
+.footer{
+  padding-top: 10px;
   border-top: 1px solid gray;
-  border-bottom: 1px solid gray;
 }
