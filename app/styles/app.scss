@@ -17,11 +17,18 @@ img {
 }
 
 // Begin SASS
+body{
+  font-family: 'Open Sans', serif;
+}
 
 // Header
-
+.header-box{
+  padding: 0px;
+}
 .header{
-  margin: 5px 0 5px 0px;
+  display: flex;
+    align-items: baseline;
+  margin: 0px 0 5px 0px;
   padding: 20px;
   border-bottom: 1px solid #E5E5E5;
   background-color: #F5F5F5;
@@ -32,30 +39,80 @@ img {
 }
 
 #header-search{
-  width: 200px;
+  width: 360px;
+  height: 30px;
+  padding: 0px 10px 0px 10px;
+  border-radius: 5px;
+  border: 1px solid lightgray;
+}
+
+.header-links{
+  padding-left: 15px;
+  font-weight: 900;
+  font-size: 14px;
+}
+
+.dropdown-one{
+  display: inline-block;
+  position: absolute;
+  top: 21px;
+  right: 65px;
+}
+
+.dropdown-two{
+  display: inline-block;
+  position: absolute;
+  top: 8px;
+  right: 14px;
+}
+
+#header-dropdown-one{
+  background-color: #F5F5F5;
+  border: none;
+  font-size: 20px;
+  line-height: 10px;
+}
+
+#header-dropdown-two{
+  background-color: #F5F5F5;
+  border: none;
+  font-size: 28px;
+  line-height: 0px;
+    img{
+      border-radius: 3px;
+    }
 }
 
 // Aside
-.Sean{
+.sean{
   border: 1px solid gray;
   border-radius: 15px;
   height: 230px;
   width: 230px;
+  margin-top: 15px;
 }
 
 .name {
-  font-size: 18px;
+  font-size: 20px;
+  font-weight: 900;
   margin-bottom: 0px;
 }
 
 .username{
-  font-size: 14px;
+  font-size: 18px;
   color: #666666;
 }
 
 .bio {
-  border-bottom: 1px solid gray;
-  padding-bottom: 5px;
+  border-bottom: 1px solid #EEEEEE;
+  padding-bottom: 10px;
+  color: #7E7676;
+}
+
+.orgs{
+  font-weight: 900;
+  padding-top: 10px;
+  border-top: 1px solid #EEEEEE;
 }
 
 
@@ -63,29 +120,99 @@ img {
 
 
 .lower-head-links{
-  left: 55px;
-  padding-bottom: 5px;
+  left: 12px;
+  padding: 40px 0px 20px 0px;
+  border-bottom: 1px solid #DDDDDD;
+  color: #7E7676;
     span{
+    position: relative;;
+      left: 20px;
     font-size: 14px;
     margin-right: 60px;
   }
 }
 
 // Repository Search
-
-// .repository-search{
-//   border-top: 1px solid gray;
-//   border-bottom: 1px solid gray;
-// }
-
-.repo-name{
-  font-size: 20px;
+.search-type-language-newrepo{
+  padding: 10px 0px 10px 0px;
+  border-bottom: 1px solid #DDDDDD;
+  position: relative;
+    left: 12px;
 }
 
+#repository-search{
+  position: relative;
+  left: -16px;
+  width: 310px;
+  height: 30px;
+  padding: 0px 10px 0px 10px;
+  border-radius: 5px;
+  border: 1px solid lightgray;
+}
 
+.button-word-all{
+  display: inline-block;
+  font-weight: bold;
+}
+.button-word-language{
+  display: inline-block;
+  color: #818181;
+}
+
+.button-word-new{
+  position: relative;
+  bottom: 6px;
+}
+
+#repo-buttons{
+      background-color: #FBFBFB;
+      background-image:
+        linear-gradient(#ffffff, #EEEEEE);
+}
+
+.btn-group > .btn:first-child {
+    height: 30px;
+    margin-top: 8px;
+}
+
+.btn-new{
+  font-size: 20px;
+  color: white;
+  width: 80px;
+  margin-left: 25px;
+
+  background-color: #68c93d;
+  background-image:
+    linear-gradient(#90ed68, #479028);
+}
+
+// Repos
+.repo-container{
+  padding: 30px 0px 30px 0px;
+  border-bottom: 1px solid #F3F3F3;
+  width: 680px;
+
+}
+.repo-name{
+  font-size: 20px;
+  font-weight: 900;
+
+}
 // Footer
-
 .footer{
-  padding-top: 10px;
-  border-top: 1px solid gray;
+  align-items: center;
+  margin-top: 40px;
+  padding: 40px 0px 40px 0px;
+  border-top: 1px solid #F3F3F3;
+    .trademark{
+      font-size: 12px;
+      color: #7E7676;
+    }
+}
+.footer > a {
+    padding-right: 5px;
+    font-size: 12px;
+}
+.footer-img{
+  padding: 0px 230px 0px 160px;
 }

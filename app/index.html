@@ -4,35 +4,64 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
     <title>4.4 Github Profile</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
     <link rel="stylesheet" href="css/app.css">
-    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
   </head>
 
 
+<div class="col-md-12 header-box">
+    <div class="header">
+        <span><img src="images/mark-github-header.svg" class="img-header"></span>
+        <span><input type="search" id="header-search" class="bar" placeholder="Search Github"></span>
+        <span class="header-links">Pull Request</span>
+        <span class="header-links">Issues</span>
+        <span class="header-links">Gist</span>
 
-  <div class="container">
-    <div class="row">
-        <div class="header">
-            <span><img src="images/mark-github-header.svg" alt="img-header"></span>
-            <span><input type="search" id="header-search" class="bar" placeholder="Search repositories..."></span>
-            <span>Pull Request</span>
-            <span>Issues</span>
-            <span>Gist</span>
-            <span><i class="fa fa-plus" aria-hidden="true"></i></span>
-            <span></span>
-          </div>
+
+        <div class="dropdown-one">
+            <button class="btn btn-default dropdown-toggle" type="button" id="header-dropdown-one" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"> + <span     class="caret"></span>
+              </button>
+            <ul class="dropdown-menu" aria-labelledby="header-dropdown-one">
+                <li><a href="#">New repository</a></li>
+                <li><a href="#">Import repository</a></li>
+                <li><a href="#">New gist</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a href="#">New organization</a></li>
+            </ul>
+        </div>
+
+        <div class="dropdown-two">
+            <!-- <button class="btn btn-default dropdown-toggle" type="button" id="header-dropdown-two"   data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"> {{avatar}} <span     class="caret"></span>
+              </button>
+                <ul class="dropdown-menu" aria-labelledby="header-dropdown-two">
+                    <li><a href="#">Logged in as smckeon</a></li>
+                    <li role="separator" class="divider"></li>
+                    <li><a href="#">Your Profile</a></li>
+                    <li><a href="#">Your Stars</a></li>
+                    <li><a href="#">Explore</a></li>
+                    <li><a href="#">Explore</a></li>
+                    <li><a href="#">Explore</a></li>
+                    <li role="separator" class="divider"></li>
+                    <li><a href="#">Settings</a></li>
+                    <li><a href="#">Sign out</a></li>
+                </ul> -->
         </div>
     </div>
-
+</div>
 
 <div class="container-fluid">
     <row>
-
+      <div class="col-md-2 col-sm-3 col-xs-4">
         <div id="github-aside">
           <!-- ASIDE CONTENT -->
         </div>
 
-        <div class="col-md-8 lower-head-links">
+        <div class="orgs">
+          <!-- ORGS CONTENT -->
+        </div>
+      </div>
+
+        <div class="col-md-8 col-sm-6 col-xs-4 lower-head-links">
             <span>Overview</span>
             <span>Repositories</span>
             <span>Stars</span>
@@ -42,78 +71,135 @@
 
 
 
-          <div class="col-md-8">
-            <form class="navbar-form navbar-left" role="search">
-              <input type="text" class="form-control" placeholder="Search repositories...">
-            </form>
-          </div>
+          <div class="col-md-8 search-type-language-newrepo">
+              <form class="navbar-form navbar-left" role="search">
+                  <span><input type="search" id="repository-search" class="bar" placeholder="Search Repositories..."></span>
+              </form>
+              <!--Type Button-->
+              <div class="btn-group">
+                <button type="button" id="repo-buttons" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 
-        <div class="col-md-8">
+                  <div class="button-word-language">Type:</div>
+                  <div class="button-word-all">All</div>
+                  <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu">
+                    <li><a href="#">Select Type</a></li>
+                    <li role="separator" class="divider"></li>
+                    <li><a href="#">Public</a></li>
+                    <li><a href="#">Private</a></li>
+                    <li><a href="#">Sources</a></li>
+                    <li><a href="#">Forks</a></li>
+                    <li><a href="#">Mirros</a></li>
+                </ul>
+                  </div>
+                <!--Language Button-->
+                <div class="btn-group">
+                  <button type="button" id="repo-buttons" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+
+                    <div class="button-word-language">Language:</div>
+                    <div class="button-word-all">All</div>
+                    <span class="caret"></span>
+                  </button>
+                  <ul class="dropdown-menu">
+                      <li><a href="#">Select Language</a></li>
+                      <li role="separator" class="divider"></li>
+                      <li><a href="#">All</a></li>
+                      <li><a href="#">CSS</a></li>
+                      <li><a href="#">HTML</a></li>
+                      <li><a href="#">Javascript</a></li>
+                  </ul>
+                    </div>
+                    <!-- New Button -->
+                    <div class="btn-group" role="group" aria-label="...">
+                      <button type="button" class="btn btn-new btn-default">
+                      <div class="button-word-new">New</div></button>
+                    </div>
+
+          </div> <!--end-->
+
+          <div class="col-md-8">
             <div class="github-repos">
               <!-- REPO CONTENT -->
             </div>
-        </div>
+          </div>
 
     </row>
 
+<!-- Handlebars Templates -->
 
-
-    <script id="github-repos-template" type="text/x-handlebars-template">
-
-
-        <div class="col-md-8">
-            <a class="repo-name">{{name}}</a>
-            <br>
-            <span class="repo-{{language}}-color"></span>
-            <span class="language">{{language}}</span>
-             <span>Updated {{formatDate}} </span>
-        </div>
-
-
+    <script id="header-avatar-template" type="text/x-handlebars-template">
+      <div class="dropdown-two">
+        <button class="btn btn-default dropdown-toggle" type="button" id="header-dropdown-two"   data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"><img src="{{avatar}}"> <span class="caret"></span>
+        </button>
+          <ul class="dropdown-menu" aria-labelledby="header-dropdown-two">
+              <li><a href="#">Logged in as smckeon</a></li>
+              <li role="separator" class="divider"></li>
+              <li><a href="#">Your Profile</a></li>
+              <li><a href="#">Your Stars</a></li>
+              <li><a href="#">Explore</a></li>
+              <li><a href="#">Explore</a></li>
+              <li><a href="#">Explore</a></li>
+              <li role="separator" class="divider"></li>
+              <li><a href="#">Settings</a></li>
+              <li><a href="#">Sign out</a></li>
+          </ul>
+      </div>
     </script>
 
 
     <script id="github-aside-template" type="text/x-handlebars-template">
 
-        <div>
-            <div class="col-md-3">
-                <img src="{{avatar}}" alt="Sean" class="Sean">
-                <p class="name">{{name}}</p>
-                <p class="username">{{login}}</p>
-                <p class="bio">{{bio}}</p>
-                <img src="images/location.svg" alt="">
-                <span class="location">{{location}}</span><br>
-                <span><img src="images/mail.svg" alt="">
-                <a href="mailto:{{email}}" target="_top">{{email}}</a></span>
-                <img src="images/clock.svg" alt="">
-                <span class="date-joined"></span>
-                <!-- <p>Organizations</p>
-                <p><img src="{{organizations_url}}" alt=""></p> -->
-            </div>
-        </div>
+          <img src="{{avatar}}" alt="Sean" class="sean">
+          <p class="name">{{name}}</p>
+          <p class="username">{{login}}</p>
+          <p class="bio">{{bio}}</p>
+          <img src="images/location.svg" alt="">
+          <span class="location">{{location}}</span><br>
+          <span><img src="images/mail.svg" alt="">
+                  <a href="mailto:{{email}}" target="_top">{{email}}</a></span>
+          <br>
+          <span><img src="images/clock.svg" alt="">
+                  <span class="date-joined">date joined</p></span>
+  </script>
 
-    </script>
 
-  <div class="col-md-12 footer">
-    <footer>
-        <span>&copy; 2017 GitHub, Inc. </span>
-        <a class="">Terms</a>
-        <a class="">Privacy</a>
-        <a class="">Security</a>
-        <a class="">Status</a>
-        <a class="help">Help</a>
+  <script id="orgs-template" type="text/x-handlebars-template">
+      <p class="organizations">Organizations</p>
+      <p><img src="{{organizations}}" alt=""></p>
+  </script>
 
-        <span><img src="images/mark-github.svg" alt="footer-img"></span>
 
-        <a class="contact-gh">Contact GitHub</a>
-        <a class="">API</a>
-        <a class="">Training</a>
-        <a class="">Shop</a>
-        <a class="">Blog</a>
-        <a class="">About</a>
-    </footer>
+  <script id="github-repos-template" type="text/x-handlebars-template">
+      <div class="col-md-8 repo-container">
+          <a class="repo-name">{{name}}</a>
+          <br>
+          <span class="repo-{{language}}-color"></span>
+          <span class="language">{{language}}</span>
+          <span>Updated {{formatDate}} </span>
+      </div>
+  </script>
+
+  <!-- Footer -->
+  <div class="container-fluid">
+      <div class="col-md-12 footer">
+          <span class="trademark">&copy; 2017 GitHub, Inc. </span>
+          <a class="">Terms</a>
+          <a class="">Privacy</a>
+          <a class="">Security</a>
+          <a class="">Status</a>
+          <a class="help">Help</a>
+
+          <span><img src="images/mark-github-footer.svg" class="footer-img"></span>
+
+          <a class="contact-gh">Contact GitHub</a>
+          <a class="">API</a>
+          <a class="">Training</a>
+          <a class="">Shop</a>
+          <a class="">Blog</a>
+          <a class="">About</a>
+      </div>
   </div>
-
 </div>
 
     <script src="js/bundle.js"></script>

@@ -19,6 +19,17 @@ if (githubtoken !== undefined) {
 
    });
 }
+// Header avatar
+$.ajax(infoApi).done(function(data){
+var avatarSource = $('#header-avatar-template').html();
+var avatarTemplate = Handlebars.compile(avatarSource);
+var avatar = {
+  avatar: data.avatar_url
+}
+$('.dropdown-two').append(avatarTemplate(avatar));
+});
+
+
 
 // Aside
 $.ajax(infoApi).done(function(data){
@@ -35,14 +46,24 @@ $.ajax(infoApi).done(function(data){
   $('#github-aside').append(asideTemplate(asideItem));
 });
 
+// Organizations
+$.ajax(infoApi).done(function(data){
+  var orgSource = $('#orgs-template').html();
+  var orgTemplate = Handlebars.compile(orgSource);
+  var orgListing = {
+    organizations: data.organizations_url
+  }
+$('.orgs').append(orgTemplate(orgListing));
+});
+
 // Repos
 $.ajax(repoApi).done(function(data){
-console.log(data);
+// console.log(data);
   var source = $('#github-repos-template').html();
   var template = Handlebars.compile(source);
 
   data.forEach(function(item){
-  console.log(item);
+  // console.log(item);
 
     $(".github-repos").append(template(item));
 
