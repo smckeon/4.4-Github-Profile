@@ -3,7 +3,7 @@ var $ = require ('jquery');
 var _ = require ('underscore');
 var githubtoken = require ('./gitapikey.js');
 var Handlebars = require ('handlebars');
-// var moment = require('moment');
+// var moment = require ('moment');
 
 //
 var infoApi = 'https://api.github.com/users/smckeon';
