@@ -1,7 +1,7 @@
 // Addons
 var $ = require ('jquery');
 var _ = require ('underscore');
-var githubtoken = require ('./gitapikey.js');
+var githubtoken;  /*= require ('./gitapikey.js');*/
 var Handlebars = require ('handlebars');
 // var moment = require ('moment');
 
